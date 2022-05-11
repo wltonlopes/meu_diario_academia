@@ -7,11 +7,18 @@ export default function ImcModulo() {
 
   const [ peso, setPeso ]= useState(0);
   const [ altura, setAltura ] = useState(0);
+  const [ imc, setImc ] = useState(0);
+
+  const calculeImc = ( p , a ) => {
+    const result = p / ( a*a ) 
+      setImc( result );
+      console.log(imc)
+    };
 
   return (
     <div>
       <Card className="text-center">
-        <Card.Header>Featured</Card.Header>
+        <Card.Header>IMC</Card.Header>
         <Card.Body>
           <Card.Title>Calcule aqui o seu indice de IMC:</Card.Title>
           <Card.Text>
@@ -36,10 +43,13 @@ export default function ImcModulo() {
                   <option>Mulher</option>
                 </Form.Select>
               </Form.Group>
-              <button type="button" onClick={ console.log( peso, altura )}> oi </button>
+              <button type="button" onClick={ () => calculeImc( peso, altura )}> Calcular meu IMC </button>
             </Form>
           </Card.Text>
         </Card.Body>
+        <div>
+         Imc é de : { imc.toFixed(2) }
+        </div>
       </Card>
 
 
