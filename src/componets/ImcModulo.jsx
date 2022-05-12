@@ -10,15 +10,22 @@ export default function ImcModulo() {
   const [ imc, setImc ] = useState(0);
   const [ imcTabel, setImcTabel ] = useState('')
 
-  const minhaMensagem = '' ;
-
   const calculeImc = ( p , a ) => {
     const result = p / ( a*a ) 
       setImc( result );
-      if (result >= 18.5 || result <=  24.5){
-        setImcTabel('Seu peso é normal');
+      if (imc < 18.5){ setImcTabel('Seu peso é ') }
+      if (imc >= 18.5 || imc <=  24.9){
+        setImcTabel('Seu peso é ');
+      } if ( imc >= 25 || imc <= 29.9 ){
+        setImcTabel('Você está em sobrepeso');
+      } if ( imc >= 30 || imc <= 34.9 ){
+        setImcTabel('Você está em obesidade 1');
+      } if ( imc >= 35 || imc <= 39.9 ){
+        setImcTabel('Você está em obesidade 2');
+      } if ( imc >= 40 ){
+        setImcTabel('Você está em obesidade 3');
       }
-      console.log(imc)
+
     };
 
   return (
