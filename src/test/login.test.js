@@ -1,10 +1,6 @@
 import {screen} from '@testing-library/react';
 import renderWithRouter from './renderWithRouter';
 import App from '../App';
-import userEvent from '@testing-library/user-event';
-// import {Router} from 'react-router-dom';
-
-// import {createMemoryHistory} from 'history';
 
 describe('Testando o componente Login', ()=>{
   it('Testando h1', async () => {
@@ -34,9 +30,5 @@ describe('Testando o componente Login', ()=>{
     );
     expect(buttonHome).toBeInTheDocument();
 
-    // userEvent.click(buttonHome);
-    // const pat = location.pathname;
-
-    // expect(pat).toBe('/home');
   });
 })
